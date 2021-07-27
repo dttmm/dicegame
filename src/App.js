@@ -1,14 +1,21 @@
+import { useState } from "react";
 import Button from "./Button"
 import Dice from "./Dice"
 
 function App() {
+  const [num, setNum] = useState(1);
+
+  const handleRollClick = () =>{
+    setNum(3)
+  }
+
   return (
     <div>
       <div>
-        <Button>던지ㄴ기</Button>
-        <Button>안던지ㄴ기</Button>
+        <Button onClick={handleRollClick}>던지기</Button>
+        <Button>처음부터</Button>
       </div>
-      <Dice color="red" num={2}></Dice>
+      <Dice color="red" num={num}></Dice>
     </div>);
 }
 
